@@ -99,7 +99,7 @@ def dark_current(image, current, exposure_time, gain=1.0, hot_pixels=False):
         hot_y = rng.randint(0, y_max, size=n_hot)
 
         hot_current = 10000 * current
-        dark_im[(hot_x, hot_y)] = hot_current * exposure_time / gain
+        dark_im[(hot_y, hot_x)] = hot_current * exposure_time / gain
     return dark_im
 
 def sky_background(image, sky_counts, gain=1):
